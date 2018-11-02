@@ -53,7 +53,11 @@ var fastMathTest = [
 
 
 function fastMath(a, b) {
-    //TODO
+    let res = '';
+    for (let i = 0; i < a.length; i++) {
+        res += parseInt(+(a[i] !== b[i]))
+    }
+    return res;
 }
 
 

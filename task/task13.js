@@ -30,7 +30,14 @@ var chatTest = [
 
 
 function chat(s) {
-    //TODO
+    let hello = 'hello';
+    let index = 0;
+    let start = -1;
+    while ((start = s.indexOf(hello[index], start + 1)) >= 0) {
+        index++
+    }
+    return String(index === 5)
+
 }
 
 

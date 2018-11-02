@@ -44,7 +44,18 @@ var capsLockTests = [
 
 
 function capsLock(str) {
-    //TODO
+    return str.split(' ').map(word => {
+        if (word.slice(1).toUpperCase() === word.slice(1)) {
+            let letter;
+            if (word[0] === word[0].toUpperCase()) {
+                letter = word[0].toLowerCase();
+            } else {
+                letter = word[0].toUpperCase();
+            }
+            word = letter + word.slice(1).toLowerCase()
+        }
+        return word;
+    }).join(' ');
 }
 
 

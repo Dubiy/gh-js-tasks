@@ -40,7 +40,40 @@ var drazilTest = [
     
 
 function drazil(boys, girls) {
-    //TODO
+    let fact = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880];
+
+    function f(n) {
+        let res = 1;
+        n = n + '';
+        for (let i = 0; i < n.length; i++) {
+            res *= fact[n[i]];
+        }
+        return res;
+    }
+
+    let number = f(boys);
+    function diver(number, fIndex, path) {
+        let res = number / fact[fIndex];
+        if (Number.isInteger(res)) {
+            if (res === 1) {
+                return [...path, fIndex];
+            } else {
+                return diver(res, fIndex, [...path, fIndex]);
+            }
+        } else {
+            if (fIndex < 9) {
+                return diver(number, fIndex + 1, path);
+            } else {
+                let newIndex;
+                while ((newIndex = path.pop()) >= 9 ) {
+                    number *= fact[newIndex]
+                }
+                number *= fact[newIndex];
+                return diver(number, newIndex + 1, path);
+            }
+        }
+    }
+    return parseInt(diver(number, 2, []).sort().reverse().join(''));
 }
 
 
