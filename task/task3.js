@@ -45,7 +45,10 @@ var longWordTests = [
 
 
 function longWord(word) {
-    //TODO
+    if (word.length > 8) {
+        word = `${word[0]}${word.length - 2}${word[word.length - 1]}`
+    }
+    return word
 }
 
 

@@ -34,7 +34,21 @@ var prettyYearTests = [
 
 
 function prettyYear(y) {
-    //TODO
+    let newY = parseInt(y) + 1;
+    while (newY < 9999) {
+        let str = newY + '';
+        let pretty = true;
+        for (let i = 0; i < str.length; i++) {
+            if (str.indexOf(str[i], i + 1) > -1) {
+                pretty = false;
+                newY++;
+                break;
+            }
+        }
+        if (pretty) {
+            return newY
+        }
+    }
 }
 
 

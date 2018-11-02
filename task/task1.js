@@ -33,7 +33,11 @@ var fibonacciTests = [
 
 
 function fibonacci(n) {
-    //TODO
+    let fib = [];
+    for (let i = 0; i < n; i++) {
+        fib.push((fib[i - 1] || 1) + (fib[i - 2] || 0));
+    }
+    return fib.reduce((total, item) => total + item, 0)
 }
 
 

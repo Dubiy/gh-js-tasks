@@ -55,7 +55,22 @@ var luckyNumberTests = [
 
 
 function luckyNumber(number) {
-    //TODO
+    let lucky = ['4', '7'];
+    let count = 0;
+    for (let i = 0; i < number.length; i++) {
+        if (lucky.includes(number[i])) {
+            count++
+        }
+    }
+    count = count + '';
+    let happy = true;
+    for (let i = 0; i < count.length; i++) {
+        if (!lucky.includes(count[i])) {
+            happy = false;
+            break;
+        }
+    }
+    return happy
 }
 
 

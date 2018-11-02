@@ -68,7 +68,19 @@ var registrationTests = [
 
 
 function registration(names) {
-    //TODO
+    let db = [];
+    return names.map(name => {
+        let index = '';
+        while (db.includes(name + index)) {
+            if (index === '') {
+                index = 1;
+            } else {
+                index++;
+            }
+        }
+        db.push(name + index);
+        return index ? name + index : 'OK'
+    })
 }
 
 

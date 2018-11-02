@@ -32,11 +32,16 @@ var factorialTests = [
     }
 ];
 
-
 function factorial(n) {
-    //TODO
+    if (n < 0) {
+        return NaN;
+    }
+    let fac = 1;
+    for (let i = 1; i <= n; i++) {
+        fac*=i;
+    }
+    return fac;
 }
-
 
 tasks.push({
     title: "Факториал",

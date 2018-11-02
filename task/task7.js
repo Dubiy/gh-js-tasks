@@ -37,17 +37,22 @@ var doubleColaTests = [
     {
         parameters: [1802],
         expectedResult: "Penny"
+    },
+    {
+        parameters: [12345],
+        expectedResult: "Leonard"
     }
-    // },
-    // {
-    //     parameters: [12345],
-    //     expectedResult: "Leonard"
-    // }
 ];
 
 
 function doubleCola(n) {
-    //TODO
+    let humans = ["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"];
+    let queue = Object.keys(humans).map(n => parseInt(n));
+    for (let i = 1; i < n; i++) {
+        let val = queue.shift();
+        queue.push(val, val);
+    }
+    return humans[queue[0]];
 }
 
 

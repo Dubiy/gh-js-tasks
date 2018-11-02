@@ -38,7 +38,16 @@ var stringDotTests = [
 
 
 function stringDot(word) {
-    //TODO
+    let res = '';
+    word = word.toLowerCase();
+    let letters = ["a", "o", "y", "e", "u", "i"];
+    for (let i = 0; i < word.length; i++) {
+        if (letters.includes(word[i])) {
+            continue;
+        }
+        res += '.' + word[i];
+    }
+    return res;
 }
 
 
